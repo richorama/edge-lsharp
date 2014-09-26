@@ -41,14 +41,14 @@ lisp(['arg1', 'arg2'], function(err, result){
 });
 ```
 
-Evaluate a function in lisp, and return the result:
+Evaluate a function in lisp, and write to the console:
 
 ```js
 var edge = require('edge');
 var ls = edge.func('lsharp', '(prn "Hello, World")');
 
 ls([], function(err, greeting){
-	console.log(greeting);
+	// Hello, World
 });
 ```
 
