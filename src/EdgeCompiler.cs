@@ -20,12 +20,18 @@ public class EdgeCompiler
         var runtime = new Runtime(System.Console.In, System.Console.Out, System.Console.Error);
         var result = runtime.EvalStrings(command);
 
-        return async (dynamic context) => {
-            if (result is Function)
+        return (dynamic context) => {
+            // eval returned a value, so return it
+            if (!(result is Function)) return Task.FromResult(result);
+             
+            // eval retuned a fucntion, so execute in a new thread
+            var tcs = new TaskCompletionSource<object>();
+            var ts = new ThreadStart(() => 
             {
-                return (result as Function).Call(context);
-            }
-            return result;
+                tcs.SetResult((result as Function).Call(context));
+            });
+            new Thread(ts).Start();
+            return tcs.Task;
         };
     }
 }
