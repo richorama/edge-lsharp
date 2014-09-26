@@ -1,0 +1,23 @@
+{
+  "name": "edge-lsharp",
+  "version": "1.0.0",
+  "description": "LSharp extension for edge.js",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richorama/edge-lsharp.git"
+  },
+  "keywords": [
+    "edge.js",
+    "edge",
+    "lisp",
+    "lsharp",
+    "node"
+  ],
+  "author": "Richard Astbury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/richorama/edge-lsharp/issues"
+  },
+  "homepage": "https://github.com/richorama/edge-lsharp"
+}
