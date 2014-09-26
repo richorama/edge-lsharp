@@ -47,7 +47,7 @@ Evaluate a function in lisp, and write to the console:
 var edge = require('edge');
 var ls = edge.func('lsharp', '(prn "Hello, World")');
 
-ls([], function(err, greeting){
+ls([], function(err){
 	// Hello, World
 });
 ```
