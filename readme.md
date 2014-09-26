@@ -36,7 +36,7 @@ Pass the lisp code in as either a comment (as above), a string, or a filename (a
 var edge = require('edge');
 var lisp = edge.func('lsharp', 'lisp-func.ls');
 
-lisp([arg1, arg2], function(err, result){
+lisp(['arg1', 'arg2'], function(err, result){
 	
 });
 ```
