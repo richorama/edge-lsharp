@@ -1,8 +1,10 @@
 # edge-lsharp
 
-Run lisp in node.
+Run lisp [(LSharp)](https://github.com/RobBlackwell/LSharp) in node.js with [edge.js](https://github.com/tjanczuk/edge).
 
 ## Example
+
+Write a factorial function in lisp, and call it from JavaScript:
 
 ```js
 var edge = require('edge');
@@ -18,3 +20,38 @@ fact([5], function(err, answer){
 	// = 120
 });
 ```
+
+## Installation
+
+```
+$ npm install edge
+$ npm install edge-lsharp
+```
+
+## Usage
+
+Pass the lisp code in as either a comment (as above), a string, or a filename (as below):
+
+```js
+var edge = require('edge');
+var lisp = edge.func('lsharp', 'lisp-func.ls');
+
+lisp([arg1, arg2], function(err, result){
+	
+});
+```
+
+Evaluate a function in lisp, and return the result:
+
+```js
+var edge = require('edge');
+var ls = edge.func('lsharp', '(prn "Hello, World")');
+
+ls([], function(err, greeting){
+	console.log(greeting);
+});
+```
+
+## License
+
+MIT
